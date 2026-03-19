@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ga-ran-gion",
+    "name": "Gà rán giòn",
+    "desc": "Gà rán vàng giòn, đậm vị",
+    "price": 63000,
+    "image": "./images/ga-ran.png"
+  },
+  {
+    "id": "burger-bo",
+    "name": "Burger bò",
+    "desc": "Bánh burger bò phô mai",
+    "price": 58000,
+    "image": "./images/burger-bo.png"
+  },
+  {
+    "id": "khoai-tay-chien",
+    "name": "Khoai tây chiên",
+    "desc": "Khoai tây chiên giòn thơm",
+    "price": 35000,
+    "image": "./images/khoai-tay-chien.png"
+  },
+  {
+    "id": "pizza-haisan",
+    "name": "Pizza hải sản",
+    "desc": "Pizza hải sản phô mai",
+    "price": 97000,
+    "image": "./images/pizza-haisan.png"
+  },
+  {
+    "id": "hotdog",
+    "name": "Hotdog xúc xích",
+    "desc": "Hotdog xúc xích đậm vị",
+    "price": 44000,
+    "image": "./images/hotdog.png"
+  },
+  {
+    "id": "my-y",
+    "name": "Mì Ý bò bằm",
+    "desc": "Mì Ý sốt cà chua bò bằm",
+    "price": 76000,
+    "image": "./images/my-y.png"
+  },
+  {
+    "id": "combo-garan",
+    "name": "Combo gà rán",
+    "desc": "1 gà rán + khoai tây + nước ngọt",
+    "price": 103000,
+    "image": "./images/combo-garan.png"
+  },
+  {
+    "id": "coca-cola",
+    "name": "Coca Cola",
+    "desc": "Coca + đá mát lạnh",
+    "price": 23000,
+    "image": "./images/nuoc-ngot.png"
+  }
+]

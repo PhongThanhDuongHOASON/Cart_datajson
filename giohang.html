@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sen:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="./images/Logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./CSS/giohang.css" />
+  <title>Giỏ hàng</title>
+</head>
+
+<body>
+  <header class="header fixed">
+    <div class="container">
+      <div class="logo">
+        <a href="trangchu.html"><img src="./images/Logo.png" alt="Logo Fandy" /></a>
+      </div>
+
+      <input type="checkbox" id="nav-mobile-input" class="nav-input" hidden />
+      <label for="nav-mobile-input" class="nav-mobile-btn"> &#9776; </label>
+      <nav class="nav">
+        <a href="trangchu.html">TRANG CHỦ</a>
+        <a href="giohang.html">GIỎ HÀNG</a>
+        <a href="sanpham.html">SẢN PHẨM</a>
+        <a href="dangnhap.html">ĐĂNG NHẬP</a>
+        <a href="dangky.html">ĐĂNG KÝ</a>
+        <label for="nav-mobile-input" class="search">
+          <input type="text" placeholder="Tìm kiếm..." />
+          <span class="search-icon">🔍</span>
+        </label>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="title">Giỏ hàng</h1>
+
+    <section class="cart-layout">
+      <div class="cart-card">
+        <div class="cart-head">
+          <h2>Danh sách sản phẩm</h2>
+          <button class="btn btn-ghost" id="clear-cart-btn" type="button">Xóa hết</button>
+        </div>
+
+        <div id="cart-empty" class="cart-empty" hidden>
+          <p>Giỏ hàng đang trống. Hãy thêm món bên dưới nhé.</p>
+          <a class="btn" href="trangchu.html">Về trang chủ</a>
+        </div>
+
+        <div class="cart-table" id="cart-table" aria-live="polite"></div>
+      </div>
+
+      <aside class="summary-card">
+        <h2>Tổng thanh toán</h2>
+
+        <div class="summary-row">
+          <span>Tạm tính</span>
+          <strong id="subtotal">0đ</strong>
+        </div>
+        <div class="summary-row">
+          <span>Phí giao hàng</span>
+          <strong id="shipping">0đ</strong>
+        </div>
+        <div class="summary-row total">
+          <span>Tổng cộng</span>
+          <strong id="total">0đ</strong>
+        </div>
+
+        <button class="btn btn-primary" id="checkout-btn" type="button">Đặt hàng</button>
+        
+      </aside>
+    </section>
+
+    <section class="suggest">
+      <h2 class="suggest-title">Gợi ý món ngon</h2>
+      <div class="suggest-grid" id="suggest-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <img src="./images/Logo.png" alt="Logo Fandy" class="footer-logo">
+        <p class="footer-text">
+          FANDY là cửa hàng thức ăn nhanh với các món ăn ngon,
+          giao hàng nhanh chóng và tiện lợi cho mọi khách hàng.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Thông tin cửa hàng</h3>
+
+        <div class="footer-info">
+          <img src="./images/icon/time.png" alt="">
+          <p>08:00 - 22:00 (Mỗi ngày)</p>
+        </div>
+
+        <div class="footer-info">
+          <img src="./images/icon/location.png" alt="">
+          <p>Đường 3/2, Ninh Kiều, TP. Cần Thơ</p>
+        </div>
+
+        <div class="footer-info">
+          <img src="./images/icon/email.png" alt="">
+          <p>fandy@gmail.com</p>
+        </div>
+
+        <div class="footer-info">
+          <img src="./images/icon/telephone.png" alt="">
+          <p>091 6533 797</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Kết nối với chúng tôi</h3>
+
+        <div class="social-icons">
+          <a href="#"><img src="./images/icon/facebook.png" alt=""></a>
+          <a href="#"><img src="./images/icon/instagram.png" alt=""></a>
+          <a href="#"><img src="./images/icon/tiktok.png" alt=""></a>
+          <a href="#"><img src="./images/icon/messenger.png" alt=""></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 FANDY | Fast Food Online</p>
+    </div>
+  </footer>
+
+  <script id="catalog-json" type="application/json">
+    [
+      { "id": "ga-ran-gion", "name": "Gà rán giòn", "desc": "Gà rán vàng giòn, đậm vị", "price": 63000, "image": "./images/ga-ran.png" },
+      { "id": "burger-bo", "name": "Burger bò", "desc": "Bánh burger bò phô mai", "price": 58000, "image": "./images/burger-bo.png" },
+      { "id": "khoai-tay-chien", "name": "Khoai tây chiên", "desc": "Khoai tây chiên giòn thơm", "price": 35000, "image": "./images/khoai-tay-chien.png" },
+      { "id": "pizza-haisan", "name": "Pizza hải sản", "desc": "Pizza hải sản phô mai", "price": 97000, "image": "./images/pizza-haisan.png" },
+      { "id": "hotdog", "name": "Hotdog xúc xích", "desc": "Hotdog xúc xích đậm vị", "price": 44000, "image": "./images/hotdog.png" },
+      { "id": "my-y", "name": "Mì Ý bò bằm", "desc": "Mì Ý sốt cà chua bò bằm", "price": 76000, "image": "./images/my-y.png" },
+      { "id": "combo-garan", "name": "Combo gà rán", "desc": "1 gà rán + khoai tây + nước ngọt", "price": 103000, "image": "./images/combo-garan.png" },
+      { "id": "coca-cola", "name": "Coca Cola", "desc": "Coca + đá mát lạnh", "price": 23000, "image": "./images/nuoc-ngot.png" }
+    ]
+  </script>
+
+  <!-- Sử dụng file JS giỏ hàng hiện tại -->
+  <script src="./JS/giohang.js"></script>
+</body>
+
+</html>
