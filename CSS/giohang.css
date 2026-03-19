@@ -25,7 +25,7 @@ img {
 
 body {
   margin: 0;
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: var(--text);
   background: var(--bg);
 }
@@ -123,7 +123,7 @@ header {
 }
 
 .cart-card,
-.summary-card {
+.TongThanhToan {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -159,6 +159,7 @@ header {
   display: grid;
   gap: 12px;
 }
+
 /* Ảnh | Thông tin | Số lượng | Tổng tiền | Xóa */
 .cart-row {
   display: grid;
@@ -256,7 +257,7 @@ header {
 }
 
 /* Summary */
-.summary-row {
+.Tamtinh {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -265,7 +266,7 @@ header {
   border-bottom: 1px dashed var(--border);
 }
 
-.summary-row.total {
+.Tamtinh.total {
   border-bottom: none;
   padding-top: 14px;
   font-size: 18px;
@@ -297,7 +298,7 @@ header {
   background: rgba(255, 107, 45, 0.1);
 }
 
-.btn-primary {
+.DatHang {
   width: 100%;
   border: none;
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
@@ -306,7 +307,7 @@ header {
   padding: 12px 14px;
 }
 
-.btn-primary:hover {
+.DatHang:hover {
   filter: brightness(1.02);
 }
 
@@ -332,11 +333,11 @@ header {
 }
 
 /* Tạo khoảng tách rõ giữa giỏ hàng và gợi ý */
-.cart-layout + .suggest {
+.cart-layout+.suggest {
   position: relative;
 }
 
-.cart-layout + .suggest::before {
+.cart-layout+.suggest::before {
   content: "";
   position: absolute;
   left: 16px;
@@ -367,13 +368,14 @@ header {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   border-color: rgba(31, 41, 55, 0.18);
+
 }
 
-.card:hover .thumb {
+.card:hover .machang {
   filter: saturate(1.05) contrast(1.03);
 }
 
-.card .thumb {
+.card .machang {
   transition: filter 0.18s ease;
   width: 100%;
   height: 160px;
@@ -382,18 +384,20 @@ header {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .cart-row,
   .card,
   .card .thumb {
     transition: none;
   }
+
   .cart-row:hover,
   .card:hover {
     transform: none;
   }
 }
 
-.card .body {
+.card .bodyallcard {
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -413,14 +417,46 @@ header {
 
 .card .card-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: 8px;
 }
 
+.card .card-row .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  background: white;
+  border: 3px solid #ff3f34;
+  color: #ff3f34;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: normal;
+}
+
+.card .card-row .btn:hover {
+  background: #ff3f34;
+  color: white;
+}
+
 .badge-price {
   font-weight: 800;
+  font-size: 25px;
+}
+
+.badge-Lastprice {
+  font-weight: 800;
+  text-decoration: 2px line-through;
+
+}
+
+.sale {
+  padding: 5px;
+  background-color: #ff3f34;
+  border-radius: 8px;
 }
 
 /* Footer du tren cua anh HUY */
@@ -432,8 +468,9 @@ header {
 .footer-container {
   width: 90%;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
   align-items: flex-start;
   gap: 40px;
 }
@@ -482,10 +519,12 @@ header {
   gap: 10px;
   margin-bottom: 10px;
   font-size: 16px;
+
 }
 
 .footer-info img {
   width: 24px;
+
 }
 
 .footer-info p {
@@ -548,6 +587,11 @@ header {
   .social-icons {
     justify-content: center;
   }
+
+  .footer-info {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -607,6 +651,10 @@ header {
   .cart-row img {
     width: 64px;
     height: 64px;
+    flex-direction: column;
+    align-items: flex-start;
+    /* vẫn bám trái */
+    gap: 6px;
   }
 
   .cart-row .cell-img {
@@ -633,8 +681,17 @@ header {
     justify-self: start;
   }
 
+  .card .card-row .sale {
+    padding: 2px 5px;
+    cursor: default;
+  }
+
   .suggest-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-container {
+    flex-direction: column;
   }
 }
 
@@ -683,6 +740,7 @@ header {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

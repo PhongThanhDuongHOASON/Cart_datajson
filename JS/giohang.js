@@ -1,3 +1,4 @@
+
 const CART_KEY = "fandy_cart_v1";
 
 let CATALOG = [];
@@ -178,13 +179,17 @@ function renderSuggest() {
   grid.innerHTML = CATALOG.map((p) => {
     return `
       <div class="card">
-        <img class="thumb" src="${p.image}" alt="${p.name}">
-        <div class="body">
+        <img class="machang" src="${p.image}" alt="${p.name}">
+        <div class="bodyallcard">
           <h3>${p.name}</h3>
           <p class="muted">${p.desc}</p>
           <div class="card-row">
+            <div class="reducedprice">
+              <span class="badge-Lastprice">${formatVND(p.Last_price)}</span>
+              <input class="sale" type="button" value="${p.Discount}%">
+            </div>
             <span class="badge-price">${formatVND(p.price)}</span>
-            <button class="btn" type="button" data-add="${p.id}">Thêm</button>
+            <button class="btn" type="button" data-add="${p.id}">Thêm sản phẩm</button>
           </div>
         </div>
       </div>
